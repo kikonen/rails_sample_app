@@ -16,6 +16,8 @@ gem 'pg', '0.12.2'
 group :development, :test do
   gem 'rspec-rails', '2.11.0'  
 
+  gem 'annotate', '2.5.0'
+
   # comment out these
   gem 'guard-rspec', '1.2.1'
   gem 'guard-spork', '1.2.0'
@@ -47,9 +49,6 @@ group :test do
   gem 'rb-inotify', '0.9'
   gem 'libnotify', '0.5.9'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
