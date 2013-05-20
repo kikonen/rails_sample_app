@@ -41,9 +41,19 @@ describe User do
     it { should_not be_valid }
   end
 
-  describe 'email  missing' do
+  describe 'email missing' do
     before { @user.email = ' ' }
     it { should_not be_valid }
+  end
+
+  describe 'email mixed case' do
+    let(:mixed_case_email) { 'foo.BAR@zoo.COM' }
+
+    it "should be valid" do
+      @user.email = mixed_case_email
+      @user.save
+      @user.reload.email == mixed_case_email.downcase
+    end
   end
 
   describe 'invalid email' do
