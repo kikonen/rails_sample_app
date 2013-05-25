@@ -14,6 +14,13 @@ gem 'pg', '0.12.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
+  gem 'crack'
+  gem 'ap'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-debugger'
+  gem 'pry-stack_explorer'
+
   gem 'rspec-rails', '2.11.0'  
 
   gem 'annotate', '2.5.0'
