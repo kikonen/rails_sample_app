@@ -37,7 +37,13 @@ SampleApp::Application.configure do
 
   # speed up testing
   require 'bcrypt'
-  silence_warnings do  
+  silence_warnings do
     BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
   end
+
+  # Set the logging destination(s)
+  config.log_to = %w[file]
+
+  # Show the logging configuration on STDOUT
+  config.show_log_configuration = false
 end

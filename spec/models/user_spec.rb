@@ -14,7 +14,7 @@ require 'spec_helper'
 
 describe User do
   before { @user = User.new(
-      name: 'Example User', 
+      name: 'Example User',
       email: 'user@example.com',
       password: 'foobar',
       password_confirmation: 'foobar') }
@@ -28,9 +28,20 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
+  it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
 
   it { should be_valid }
+  it { should_not be_admin }
+
+  describe 'with admin attribute set to true' do
+    before do
+      @user.save!
+      @user.toggle! :admin
+    end
+
+    it { should be_admin }
+  end
 
   describe 'name missing' do
     before { @user.name = ' ' }
@@ -120,7 +131,7 @@ describe User do
     it { should_not be_valid }
   end
 
-  describe 'too short password' do 
+  describe 'too short password' do
     before { @user.password = @user.password_confirmation = 'az' }
     it { should be_invalid }
   end
@@ -129,17 +140,17 @@ describe User do
     before { @user.save }
     let(:found_user) { User.find_by_email(@user.email) }
 
-    describe 'valid password' do 
+    describe 'valid password' do
       it { should == found_user.authenticate(@user.password) }
     end
 
-    describe 'invalid password' do 
+    describe 'invalid password' do
       let(:user_for_invalid_password) { found_user.authenticate('invalid pwd') }
 
       it { should_not == user_for_invalid_password }
       specify { user_for_invalid_password.should be_false }
-    end    
-  end 
+    end
+  end
 
   describe 'remember token' do
     before { @user.save }
