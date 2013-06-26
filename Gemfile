@@ -14,6 +14,8 @@ gem 'logging-rails', require: 'logging/rails'
 gem 'ruby-prof'
 gem 'awesome_print'
 
+gem 'newrelic_rpm'
+
 # Bundle edge Rails instead:
 # gem 'rails', git: 'git://github.com/rails/rails.git'
 
