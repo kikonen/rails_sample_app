@@ -14,3 +14,6 @@
 /log/*.log
 /log/*.log.age
 /tmp
+
+.vagrant
+cookbooks

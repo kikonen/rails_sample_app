@@ -1,14 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.17'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
+#gem 'rails-patch-json-encode'
+gem 'oj'
 
-gem 'pg', '0.12.2'
+gem 'pg'#, '0.12.2'
 
 gem 'logging-rails', require: 'logging/rails'
 gem 'ruby-prof'
@@ -24,8 +26,7 @@ group :development, :test do
   gem 'ap'
   gem 'pry-rails'
   gem 'pry-doc'
-  gem 'pry-debugger'
-  gem 'pry-nav'
+  gem 'pry-byebug'
   gem 'pry-stack_explorer'
 
   gem 'rspec-rails', '2.11.0'
@@ -33,10 +34,10 @@ group :development, :test do
   gem 'annotate', '2.5.0'
 
   # comment out these
-  gem 'guard-rspec', '1.2.1'
-  gem 'guard-spork', '1.2.0'
-  gem 'childprocess', '0.3.6'
-  gem 'spork', '0.9.2'
+#  gem 'guard-rspec', '1.2.1'
+#  gem 'guard-spork', '1.2.0'
+#  gem 'childprocess', '0.3.6'
+#  gem 'spork', '0.9.2'
 end
 
 
@@ -54,7 +55,7 @@ end
 
 group :test do
   gem 'fuubar'
-  gem 'capybara', '1.1.2'
+#  gem 'capybara', '1.1.2'
   gem 'factory_girl_rails', '4.1.0'
 #  gem 'cucumber-rails', '1.2.1'
   gem 'database_cleaner', '0.7.0'
