@@ -2,6 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  errors:
+    messages:
+      blank: ERR_REQUIRED
+      too_short: ERR_MIN_LEN (%{count})
+      too_long: ERR_MAX_LEN (%{count})
+      invalid: ERR_FORMAT
+      taken: ERR_UNIQUE
+
   hello: "Hello world"
   activerecord:
     attributes:

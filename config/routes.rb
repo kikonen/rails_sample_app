@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  get '/test_to_json', to: 'foo#show_to_json'
+  get '/test_multi_json', to: 'foo#show_multi_json'
+  get '/test_oj', to: 'foo#show_oj'
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
